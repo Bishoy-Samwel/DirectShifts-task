@@ -2,8 +2,11 @@
   "name": "app",
   "private": "true",
   "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "@hotwired/stimulus": "^3.0.1",
     "@hotwired/turbo-rails": "^7.1.1",
+    "@mui/material": "^5.8.0",
     "esbuild": "^0.14.39",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
