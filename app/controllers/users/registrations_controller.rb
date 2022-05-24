@@ -1,6 +1,13 @@
 class Users::RegistrationsController < Devise::RegistrationsController
   respond_to :json
 
+  def build_resource(hash = {})
+    super
+    if hash[:referral_code] && referrer = User.find_by(referral_code: hash[:referral_code])
+      self.resource.referred_by_id = referrer.id
+    end
+  end
+
   private
   
   def respond_with(resource, _opts = {})
