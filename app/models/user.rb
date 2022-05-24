@@ -13,6 +13,8 @@ class User < ApplicationRecord
 
 
   before_create :set_referral_code
+  after_create :complete_referral!
+  
   validates :referral_code, uniqueness: true
 
   def set_referral_code
