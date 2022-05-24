@@ -3,7 +3,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def build_resource(hash = {})
     super
-    if hash[:referral_code] && referrer = User.find_by(referral_code: hash[:referral_code])
+    if hash[:ref_code] && referrer = User.find_by(referral_code: hash[:ref_code])
       self.resource.referred_by_id = referrer.id
     end
   end
