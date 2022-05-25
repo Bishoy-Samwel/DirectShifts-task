@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get '*page', to: 'components#index', constraints: -> (req) do
+    !req.xhr? && req.format.html?
+  end
+  
   devise_for :users,
   controllers: {
       sessions: 'users/sessions',
