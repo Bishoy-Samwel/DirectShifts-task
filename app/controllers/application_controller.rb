@@ -8,8 +8,5 @@ class ApplicationController < ActionController::Base
     attributes = [:ref_code]
     devise_parameter_sanitizer.permit(:sign_up, keys: attributes)
     devise_parameter_sanitizer.permit(:account_update, keys: attributes)
-    devise_parameter_sanitizer.permit(:sign_up) do |user|
-      user.permit(:email, :password, :password_confirmation, :ref_code)
-    end
   end
 end
