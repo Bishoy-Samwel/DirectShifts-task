@@ -31,6 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_23_153933) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "referral_code"
+    t.string "referred_by_code"
     t.integer "referred_by_id"
     t.datetime "referral_completed_at"
     t.index ["email"], name: "index_users_on_email", unique: true
