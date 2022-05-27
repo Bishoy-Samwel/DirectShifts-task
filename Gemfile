@@ -76,3 +76,8 @@ end
 gem "devise-jwt", "~> 0.9.0"
 gem "rack-cors", "~> 1.1"
 gem 'dotenv-rails', groups: [:development, :test]
+
+gem "awesome_print"
+gem "hirb"
+gem 'irbtools', '~> 3.0', '>= 3.0.5'
+gem 'table_print'
