@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'private/test'
   get '/current_user', to: 'current_user#index'
   get '*page', to: 'components#index', constraints: -> (req) do
     !req.xhr? && req.format.html?
