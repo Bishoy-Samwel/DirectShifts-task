@@ -2,7 +2,6 @@ require 'securerandom'
 # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 class User < ApplicationRecord
-
   has_many :referred_users, class_name: "User", foreign_key: "referred_by_id"
   belongs_to :referred_by, class_name: "User", optional:true
 
@@ -11,10 +10,9 @@ class User < ApplicationRecord
          :registerable,
          jwt_revocation_strategy: JwtDenylist
 
-
   before_create :set_referral_code
   after_create :complete_referral!
-  
+
   validates :referral_code, uniqueness: true
 
   def set_referral_code
