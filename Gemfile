@@ -81,3 +81,4 @@ gem "awesome_print"
 gem "hirb"
 gem 'irbtools', '~> 3.0', '>= 3.0.5'
 gem 'table_print'
+gem 'fast_jsonapi'
