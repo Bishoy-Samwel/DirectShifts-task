@@ -4,10 +4,9 @@ import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import { authenticationReducer } from './auth';
 
 const rootReducer = combineReducers({
-  auth: authenticationReducer,
+  auth: (state, action) => 'testing',
 });
 
 export const configureStore = () => createStore(
