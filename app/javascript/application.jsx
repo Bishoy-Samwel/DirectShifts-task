@@ -4,18 +4,27 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from '@mui/material/Button';
-import App from './components/App';
 
-// const App = () => {
-//   return (
-//     <div><Button variant="contained">Hello World!!</Button></div>
-    
-//   )
-// }
+import {
+  BrowserRouter as Router,
+} from 'react-router-dom';
+
+import { Provider } from 'react-redux';
+import { Container } from './components/Container';
+import { configureStore } from './components/redux/configureStore';
+
+const store = configureStore();
 
 document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<App />, document.getElementById('root'))
+  ReactDOM.render(
+    <React.StrictMode>
+      <Provider store={store}>
+        <Router>
+          <Container store={store} />
+        </Router>
+      </Provider>
+    </React.StrictMode>,
+    document.getElementById('root'))
 })
 
 

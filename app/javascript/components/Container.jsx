@@ -5,9 +5,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { LogIn } from './Pages/LogIn';
-import { SignUp } from './Pages/SignUp';
-import { Home } from './Pages/Home';
 
 export const Container = () => {
   const dispatch = useDispatch();
