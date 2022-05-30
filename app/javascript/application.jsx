@@ -10,8 +10,8 @@ import {
 } from 'react-router-dom';
 
 import { Provider } from 'react-redux';
-import { Container } from './components/Container';
-import { configureStore } from './components/redux/configureStore';
+import { configureStore } from './src/redux/configureStore';
+import { Container } from './src/Components/Container';
 
 const store = configureStore();
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <React.StrictMode>
       <Provider store={store}>
         <Router>
-          <Container store={store} />
+          <Container />
         </Router>
       </Provider>
     </React.StrictMode>,
