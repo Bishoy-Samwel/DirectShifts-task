@@ -6,6 +6,7 @@ import ProtectedRoute from './ProtectedRoute';
 import Signup from './Pages/Signup';
 import Navbar from './Navbar';
 import Login from './Pages/Login';
+import WithAuth from './withAuth';
 
 export const Container = () => {
   return (
@@ -13,7 +14,7 @@ export const Container = () => {
       <Navbar />
       <Routes>
         <Route exact path='/' element={<NormalRoute />} />
-        <Route exact path='/protected_route' element={<ProtectedRoute />} />
+        <Route exact path='/protected_route' element={<WithAuth wrapped={ProtectedRoute}/>} />
         <Route exact path='/signup' element={<Signup />} />
         <Route exact path='/login' element={<Login />} />
       </Routes>
