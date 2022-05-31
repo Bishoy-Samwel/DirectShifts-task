@@ -7,7 +7,6 @@ const Logout = ({ dispatchLogoutUser }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate("/login");
     dispatch(logoutUser())
   };
 

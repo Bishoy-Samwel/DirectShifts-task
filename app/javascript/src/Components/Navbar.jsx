@@ -1,9 +1,54 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import Logout from './Logout';
+import { authState } from '../selectors';
 
-const Navbar = ({ authChecked, loggedIn, currentUser }) => {
+const Navbar = () => {
+  const {loggedIn, authChecked, currentUser} = useSelector(authState);
+  renderAuthLinks = () => {
+    if (authChecked) {
+      return loggedIn ? (
+        <>
+          {currentUser.email}
+          <Logout />
+        </>
+      ) : (
+        <>
+          <NavLink
+            exact
+            to='/signup'
+          >
+            Sign Up
+          </NavLink>
+          <NavLink
+            exact
+            to='/login'
+          >
+            Log In
+          </NavLink>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <NavLink
+            exact
+            to='/signup'
+          >
+            Sign Up
+          </NavLink>
+          <NavLink
+            exact
+            to='/login'
+          >
+            Log In
+          </NavLink>
+        </>
+      )
+    }
+  }
+  
   return (
     <nav>
       <div>
@@ -18,20 +63,8 @@ const Navbar = ({ authChecked, loggedIn, currentUser }) => {
             to='/protected_route'>
             ProtectedRoute
           </NavLink>
-          <Logout />
         </div>
-        <div >
-          <NavLink
-            exact
-            to='/signup'>
-            Sign Up
-          </NavLink>
-          <NavLink
-            exact
-            to='/login'>
-            Log In
-          </NavLink>
-        </div>
+        {renderAuthLinks()}
       </div>
     </nav>
   );
