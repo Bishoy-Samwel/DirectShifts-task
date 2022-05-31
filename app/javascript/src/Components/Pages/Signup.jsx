@@ -9,6 +9,7 @@ import { authChecked } from '../../selectors';
 const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const authChecdState = useSelector(authChecked)
   state = {
     email: "",
     password: "",
@@ -17,10 +18,10 @@ const Signup = () => {
 
   const [SignupState, setSignupState] = useState(state)
   useEffect(()=>{
-    if (authChecked) {
+    if (authChecdState) {
       navigate('/')
     }
-  },[authChecked])
+  },[authChecdState])
 
   handleChange = (event) => {
     setSignupState((prev) => ({ ...prev,
