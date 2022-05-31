@@ -11,12 +11,13 @@ const initialState = {
 // Reducer
 export default function authReducer(state = initialState, action) {
   switch (action.type) {
-    case AUTHENTICATED:
+    case AUTHENTICATED:{
       return {
         authChecked: true,
         loggedIn: true,
         currentUser: action.payload,
       };
+    }
     case NOT_AUTHENTICATED:
       return {
         authChecked: true,
@@ -117,6 +118,24 @@ export const logoutUser = () => {
           dispatch({ type: NOT_AUTHENTICATED });
           return Promise.reject(errors);
         });
+      }
+    });
+  };
+};
+
+export const checkAuth = () => {
+  return (dispatch) => {
+    return fetch("http://localhost:3001/current_user", {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: getToken()
+      }
+    }).then((res) => {
+      if (res.ok) {
+        return res.json().then(user => dispatch({type: AUTHENTICATED, payload: user}))
+      } else {
+        return Promise.reject(dispatch({type: NOT_AUTHENTICATED}))
       }
     });
   };

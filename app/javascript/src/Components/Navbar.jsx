@@ -36,3 +36,5 @@ const Navbar = ({ authChecked, loggedIn, currentUser }) => {
     </nav>
   );
 };
+
+export default Navbar;
