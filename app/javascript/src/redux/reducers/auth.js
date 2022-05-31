@@ -125,7 +125,7 @@ export const logoutUser = () => {
 
 export const checkAuth = () => {
   return (dispatch) => {
-    return fetch("http://localhost:3001/current_user", {
+    return fetch("http://localhost:3000/current_user", {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
