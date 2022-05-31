@@ -3,13 +3,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { signupUser } from '../../redux/reducers/auth';
-import { authChecked } from '../../selectors';
+import {  loggedIn } from '../../selectors';
 
 
 const Signup = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const authChecdState = useSelector(authChecked)
+  const loggedInState = useSelector(loggedIn)
   state = {
     email: "",
     password: "",
@@ -18,10 +18,10 @@ const Signup = () => {
 
   const [SignupState, setSignupState] = useState(state)
   useEffect(()=>{
-    if (authChecdState) {
+    if (loggedInState) {
       navigate('/')
     }
-  },[authChecdState])
+  },[loggedInState])
 
   handleChange = (event) => {
     setSignupState((prev) => ({ ...prev,
@@ -41,7 +41,7 @@ const Signup = () => {
     return (
       <form onSubmit={handleSubmit}>
         <h1>Sign Up</h1>
-        <p>{SignupState.errors.status.message}</p>
+        {/* <p>{SignupState.errors.status.message}</p> */}
         <fieldset>
           <label  htmlFor='email'>
             Email:
