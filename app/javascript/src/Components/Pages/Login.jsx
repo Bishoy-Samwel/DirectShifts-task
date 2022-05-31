@@ -15,7 +15,7 @@ const Login = () => {
     if (logged) {
       navigate('/')
     }
-  },[])
+  },[logged])
 
   const [loginState, setLoginState] = useState({
     email: "",
@@ -24,9 +24,9 @@ const Login = () => {
   });
 
   handleChange = (event) => {
-    setLoginState({
+    setLoginState((prev) => ({ ...prev,
       [event.target.name]: event.target.value
-    });
+    }));
   };
 
   handleSubmit = (event) => {
@@ -51,9 +51,7 @@ const Login = () => {
       <fieldset>
         <label htmlFor='password'> Password: </label>
         <input
-          type='password'
-          name='password'
-          id='password'
+          type='password' name='password' id='password'
           onChange={handleChange}
           value={loginState.password}
         />
