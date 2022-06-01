@@ -23,6 +23,9 @@ class User < ApplicationRecord
   end
 
   def complete_referral!
-    update(referral_completed_at: Time.zone.now)
+    #If this user is invited by someone => register the time
+    if referred_by_code
+      update(referral_completed_at: Time.zone.now)
+    end
   end
 end
