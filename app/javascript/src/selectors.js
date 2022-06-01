@@ -8,3 +8,4 @@ export const currentUser = (state) => state.auth.currentUser;
 
 export const authState = (state) => state.auth;
 
+export const referredList = (state) => state.referral.referredList
