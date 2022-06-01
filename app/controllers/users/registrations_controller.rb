@@ -3,8 +3,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   def build_resource(hash = {})
     super
+    # if the referred_by_code is exist in the request body => assign the referred_by value
     if hash[:referred_by_code] && referrer = User.find_by(referral_code: hash[:referred_by_code])
       self.resource.referred_by = referrer
+      self.resource.referred_by_code = hash[:referred_by_code]
     end
   end
 
