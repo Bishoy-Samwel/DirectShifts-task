@@ -14,7 +14,7 @@ const Navbar = () => {
           <Logout />
         </>
       )
-    } else {
+    } else if (!authChecked || !loggedIn){
       return (
         <>
           <NavLink
