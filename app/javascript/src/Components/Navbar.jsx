@@ -48,6 +48,11 @@ const Navbar = () => {
             to='/protected_route'>
             ProtectedRoute
           </NavLink>
+          <NavLink
+            exact
+            to='/referral'>
+            Referral
+          </NavLink>
         </div>
         {renderAuthLinks()}
       </div>
