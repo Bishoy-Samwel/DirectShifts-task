@@ -7,28 +7,13 @@ import { authState } from '../selectors';
 const Navbar = () => {
   const {loggedIn, authChecked, currentUser} = useSelector(authState);
   renderAuthLinks = () => {
-    if (authChecked) {
-      return loggedIn ? (
+    if (authChecked && loggedIn) {
+      return (
         <>
           {currentUser.email}
           <Logout />
         </>
-      ) : (
-        <>
-          <NavLink
-            exact
-            to='/signup'
-          >
-            Sign Up
-          </NavLink>
-          <NavLink
-            exact
-            to='/login'
-          >
-            Log In
-          </NavLink>
-        </>
-      );
+      )
     } else {
       return (
         <>
