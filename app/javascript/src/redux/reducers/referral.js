@@ -2,7 +2,6 @@ import { getToken } from "./auth";
 
 // Actions Types
 const GET_REFERRED_LIST = 'GET_REFERRED_LIST'
-const GET_REFERRED_LIST_DONE = 'GET_REFERRED_LIST_DONE'
 const LOADING_REFERRED_LIST = 'LOADING_REFERRED_LIST'
 
 // Initial State
@@ -20,7 +19,6 @@ export default function referralReducer(state = initialState, action) {
       };
     }
     case GET_REFERRED_LIST: {
-      console.log(action.payload);
       return {
         ...state,
         referredList: action.payload,
@@ -34,7 +32,6 @@ export default function referralReducer(state = initialState, action) {
 }
 
 // Action Creators
-
 
 // Thunks ( or any side effects )
 
