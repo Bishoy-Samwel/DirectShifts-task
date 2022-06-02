@@ -5,16 +5,26 @@ import Logout from './Logout';
 import { authState } from '../selectors';
 
 const Navbar = () => {
-  const {loggedIn, authChecked, currentUser} = useSelector(authState);
+  const { loggedIn, authChecked, currentUser } = useSelector(authState);
   renderAuthLinks = () => {
     if (authChecked && loggedIn) {
       return (
         <>
+          <NavLink
+            exact
+            to='/protected_route'>
+            ProtectedRoute
+          </NavLink>
+          <NavLink
+            exact
+            to='/referral'>
+            Referral
+          </NavLink>
           {currentUser.email}
           <Logout />
         </>
       )
-    } else if (!authChecked || !loggedIn){
+    } else if (!authChecked || !loggedIn) {
       return (
         <>
           <NavLink
@@ -33,7 +43,7 @@ const Navbar = () => {
       )
     }
   }
-  
+
   return (
     <nav>
       <div>
@@ -42,16 +52,6 @@ const Navbar = () => {
             exact
             to='/'>
             NormalRoute
-          </NavLink>
-          <NavLink
-            exact
-            to='/protected_route'>
-            ProtectedRoute
-          </NavLink>
-          <NavLink
-            exact
-            to='/referral'>
-            Referral
           </NavLink>
         </div>
         {renderAuthLinks()}
