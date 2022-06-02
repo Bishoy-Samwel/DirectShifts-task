@@ -55,7 +55,7 @@ export const signupUser = (credentials) => {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ user: credentials })
+      body: JSON.stringify({ user: {...credentials, referred_by_code:localStorage.getItem("referralCode")} })
     }).then((res) => {
       if (res.ok) {
         setToken(res.headers.get("Authorization"));
