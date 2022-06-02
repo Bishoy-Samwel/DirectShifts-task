@@ -8,6 +8,7 @@ import Navbar from './Navbar';
 import Login from './Pages/Login';
 import WithAuth from './withAuth';
 import Referral from './Referral';
+import CheckRef from './CheckRef';
 
 export const Container = () => {
   return (
@@ -19,6 +20,7 @@ export const Container = () => {
         <Route exact path='/referral' element={<WithAuth wrapped={Referral}/>} />
         <Route exact path='/signup' element={<Signup />} />
         <Route exact path='/login' element={<Login />} />
+        <Route exact path="/:ref" element={<CheckRef/>} />
       </Routes>
     </div>
   );
