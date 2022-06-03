@@ -1,24 +1,30 @@
-# README
+# Ruby on Rails API - React/Redux: Referral System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+![image](https://user-images.githubusercontent.com/29541335/171926620-2b2fe537-a7d4-475c-87c2-632880d2d052.png)
+![image](https://user-images.githubusercontent.com/29541335/171926681-b01353a9-d49b-4ca1-9f64-edf464da90fa.png)
+![image](https://user-images.githubusercontent.com/29541335/171927589-151b67c1-1688-4bfe-a8cb-c673ba5931da.png)
 
-Things you may want to cover:
 
-* Ruby version
+**Environment**  
 
-* System dependencies
+- Ruby version: 3.0.1
+- Rails version: 7.0.1
+- Default Port: 3000
 
-* Configuration
+**Setup Database**
+- run: 
+```bash
+rails db:create
+rails db:migrate
+```
 
-* Database creation
+**Commands**
+- run: 
+```bash
+./bin/dev
+```
+- install: 
+```bash
+bundle install
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
