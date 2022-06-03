@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { authChecked, loggedIn } from "../selectors";
 import Login from './Pages/Login';
-import LoadingSpinner from './LoadingSpinner';
 import { checkAuth } from '../redux/reducers/auth';
+import { LinearProgress } from "@mui/material";
 
 const WithAuth = (props) => {
   const dispatch = useDispatch()
@@ -11,7 +11,7 @@ const WithAuth = (props) => {
   const loggedInState = useSelector(loggedIn)
   useEffect(() => { dispatch(checkAuth()) }, [])
   if (!authCheckedState) {
-    return <LoadingSpinner />;
+    return <LinearProgress color="success"/>;
   } else if (!loggedInState) {
     return (
       <>
