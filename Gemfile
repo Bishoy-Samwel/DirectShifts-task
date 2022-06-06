@@ -1,10 +1,12 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.0"
+ruby "3.0.1"
+
+gem 'devise'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem "rails", "~> 7.0.3"
+gem "rails", "~> 7.0.1"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -70,3 +72,13 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "devise-jwt", "~> 0.9.0"
+gem "rack-cors", "~> 1.1"
+gem 'dotenv-rails', groups: [:development, :test]
+
+gem "awesome_print"
+gem "hirb"
+gem 'irbtools', '~> 3.0', '>= 3.0.5'
+gem 'table_print'
+gem 'fast_jsonapi'
