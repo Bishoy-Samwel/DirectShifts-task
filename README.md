@@ -19,16 +19,14 @@ rails db:migrate
 ```
 
 **Commands**
-- install:
+- install: 
 ```bash
 npm i
+bundle install
 ```
 - run: 
 ```bash
 ./bin/dev
 ```
-- install: 
-```bash
-bundle install
-```
+
 
