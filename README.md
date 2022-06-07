@@ -11,6 +11,24 @@
 - Rails version: 7.0.1
 - Default Port: 3000
 
+**Credentials**
+- Generate a Key
+```bash
+rake secret 
+```
+- Copy the key 
+
+```bash
+EDITOR="code --wait" rails credentials:edit --environment=development
+```
+- Add and past the key here
+```bash
+devise:
+ jwt_secret_key: key
+```
+
+
+
 **Setup Database**
 - run: 
 ```bash
